@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+
+\DeclareMathOperator{\R}{\mathbb R}
+
+\pagestyle{fancy}
+\fancyhead[L]{Banghao Chi}
+\fancyhead[C]{Homework 1}
+\fancyhead[R]{25th Jan}
+
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\begin{document}
+
+\section*{Exercise 1}
+Write a linear program for the following problem. (Do not solve.)
+
+A ship is transporting rice and wheat from California to Alaska. It has three cargo holds with the following capacities:
+\begin{itemize}
+\item The forward cargo hold can carry at most 10,000 tons, and at most 400,000 cubic feet.
+\item The middle cargo hold can carry at most 5,000 tons, and at most 250,000 cubic feet.
+\item The aft cargo hold can carry at most 12,000 tons, and at most 600,000 cubic feet.
+\end{itemize}
+
+In addition, for the ship to be balanced, each cargo hold must be filled to the same fraction of its total capacity, with respect to tonnage.
+
+A ton of wheat takes up 44.7 cubic feet and can be sold at a profit of \$20; a ton of rice takes up 40.9 cubic feet and can be sold at a profit of \$18.
+
+The goal is to maximize the profit from the ship's cargo.
+
+\textbf{Solution: }
+\newpage
+
+\section*{Exercise 2}
+Draw the feasible region for this linear program, then solve it using the naive approach.
+\begin{align*}
+\text{maximize} \quad & x + y \\
+x,y \in \mathbb{R} \\
+\text{subject to} \quad & 6x + 5y \leq 19, \\
+& y \leq 4x + 9, \\
+& 2x - 7y \leq 15
+\end{align*}
+
+\textbf{Solution: }
+\newpage
+
+\section*{Exercise 3}
+\begin{enumerate}[(a)]
+\item Rewrite the constraint $|x| + |y| \leq 5$ as a combination of linear constraints.
+\item Show that there is no way to rewrite the constraint $|x| + |y| \geq 5$ as a combination of linear constraints.
+\end{enumerate}
+
+\textbf{Solution: }
+\newpage
+
+\section*{Exercise 4}
+Consider the following LP:
+\begin{align*}
+\text{maximize} \quad & x_1 - 3x_2 - 2x_4 \\
+x \in \mathbb{R}^4 \\
+\text{subject to} \quad & \frac{1}{2}x_1 - \frac{7}{2}x_2 - \frac{3}{2}x_3 + \frac{7}{2}x_4 \leq 0, \\
+& \frac{1}{2}x_1 - \frac{3}{2}x_2 - \frac{1}{2}x_3 + \frac{1}{2}x_4 \leq 0, \\
+& x \geq 0
+\end{align*}
+
+\begin{enumerate}[(a)]
+\item Perform two iterations of the simplex method using the following pivoting rule: choose the entering variable with the highest reduced cost. When both rows are valid leaving variables (in which case they'll always be tied for the smallest ratio) choose the basic variable for the first row as the leaving variable.
+\item Comparing the resulting tableau to the original tableau, argue that the simplex method with this pivoting rule will cycle forever, returning to the same tableau every six steps.
+\end{enumerate}
+
+\textbf{Solution: }
+\newpage
+
+\section*{Exercise 5}
+Consider an LP of the form
+\begin{align*}
+\text{maximize} \quad & c^\top x \\
+x \in \mathbb{R}^n \\
+\text{subject to} \quad & Ax \leq b
+\end{align*}
+
+Let $u, v \in \mathbb{R}^n$ be feasible solutions. Prove that $u$ and $v$ are optimal solutions if and only if $(u + v)/2$ is an optimal solution.
+
+\textbf{Solution: }
+
+\end{document}
