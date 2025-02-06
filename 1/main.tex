@@ -37,6 +37,47 @@ A ton of wheat takes up 44.7 cubic feet and can be sold at a profit of \$20; a t
 The goal is to maximize the profit from the ship's cargo.
 
 \textbf{Solution: }
+
+\textbf{Decision Variables:}
+Let's define:
+\begin{align*}
+w_f &= \text{tons of wheat in forward hold} \\
+w_m &= \text{tons of wheat in middle hold} \\
+w_a &= \text{tons of wheat in aft hold} \\
+r_f &= \text{tons of rice in forward hold} \\
+r_m &= \text{tons of rice in middle hold} \\
+r_a &= \text{tons of rice in aft hold}
+\end{align*}
+
+\textbf{Objective Function(to maximize):}
+\[ 20(w_f + w_m + w_a) + 18(r_f + r_m + r_a) \]
+
+\textbf{Subject to:}
+
+\text{Weight constraints for each hold:}
+\begin{align*}
+w_f + r_f &\leq 10,000 \text{ (forward)} \\
+w_m + r_m &\leq 5,000 \text{ (middle)} \\
+w_a + r_a &\leq 12,000 \text{ (aft)}
+\end{align*}
+
+\text{Volume constraints for each hold:}
+\begin{align*}
+44.7w_f + 40.9r_f &\leq 400,000 \text{ (forward)} \\
+44.7w_m + 40.9r_m &\leq 250,000 \text{ (middle)} \\
+44.7w_a + 40.9r_a &\leq 600,000 \text{ (aft)}
+\end{align*}
+
+\text{Balance constraints (equal fractions of capacity):}
+$$
+\frac{w_f + r_f}{10,000} = \frac{w_m + r_m}{5,000} = \frac{w_a + r_a}{12,000}
+$$
+
+\text{Non-negativity constraints:}
+\begin{align*}
+w_f, w_m, w_a, r_f, r_m, r_a &\geq 0
+\end{align*}
+
 \newpage
 
 \section*{Exercise 2}
