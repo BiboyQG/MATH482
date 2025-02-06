@@ -189,7 +189,7 @@ Therefore, the maximum value of the objective function is $4$.
 (b) To prove that $|x| + |y| \geq 5$ cannot be written as a combination of linear constraints:
 
 \begin{itemize}
-\item Suppose, for contradiction, that $|x| + |y| \geq 5$ could be written as a finite set of linear constraints.
+\item Suppose, for contradiction, that $|x| + |y| \geq 5$ could be written as a combination of linear constraints.
 \item The feasible region of $|x| + |y| \geq 5$ is the exterior of a diamond-shaped region(in this case, it is the union of the half-planes defined by the linear constraints, which is not necessarily convex), which is non-convex. We can verify this by taking two points (6, 0), and (-6, 0), which both satisfy $|x| + |y| = 6 > 5$, but the midpoint of the line segment connecting them does not, in this case, $|0| + |0| = 0 < 5$.
 \item However, by definition of feasible region, it is the intersection of all half-planes defined by the linear constraints of the LP, which should be convex.
 \item Contradiction.
@@ -213,7 +213,52 @@ x \in \mathbb{R}^4 \\
 \item Comparing the resulting tableau to the original tableau, argue that the simplex method with this pivoting rule will cycle forever, returning to the same tableau every six steps.
 \end{enumerate}
 
-\textbf{Solution: }
+\textbf{Solution: } \\
+
+(a) Two iterations of the simplex method with the given pivot rule.\\
+
+Step 1: Construct the initial tableau. \\
+
+We take the basic variables to be \(s_1, s_2\) initially (each slack variable corresponding to one row), and treat \(x_1, x_2, x_3, x_4\) as nonbasic.  We also introduce the objective row in the form
+\[
+z \;-\; x_1 \;+\; 3\,x_2 \;+\; 2\,x_4 \;=\; 0.
+\]
+Therefore, we can construct the initial tableau as follows:
+
+\[
+\begin{array}{c|cccccc|c}
+  & x_1 & x_2 & x_3 & x_4 & s_1 & s_2 & \text{RHS}\\\hline
+s_1 & \tfrac12 & -\tfrac72 & -\tfrac32 & \tfrac72 & 1 & 0 & 0\\
+s_2 & \tfrac12 & -\tfrac32 & -\tfrac12 & \tfrac12 & 0 & 1 & 0\\\hline
+-z   & -1       & 3         & 0         & 2        & 0 & 0 & 0
+\end{array}
+\]
+
+Step 2: Determine the entering variable. \\
+
+We are doing a \emph{maximization} problem, so in the objective row (the \(z\)-row) we look for the largest (most positive) coefficient among the nonbasics, which is \(3\) (for \(x_2\)).  However, looking at the entry value, both $-\frac{7}{2}$ and $-\frac{3}{2}$ are negative, so we need to find the other reduced cost, which is 2 (for \(x_4\)).  Therefore, \(x_4\) enters the basis.
+
+Step 3: Determine the leaving variable (ratio test). \\
+
+We look only at rows where the pivot column's coefficient is \(\ge 0\).  In row~\(s_1\) and ~\(s_2\), the \(x_4\)-coefficient is \(\,\tfrac72\) and \(\,\tfrac12\) respectively, which is \emph{positive}.  However, since the RHS are both 0, the ratios are both 0 as well. According to the rule, we need to choose the first row's basic variable to leave, which is \(s_1\). \\
+
+Step 4: Pivot. \\
+
+We now pivot on the entry in the \(x_4\)-column and the \(s_1\)-row.  This gives us the new tableau:
+
+\[
+\begin{array}{c|cccccc|c}
+  & x_1 & x_2 & x_3 & x_4 & s_1 & s_2 & \text{RHS}\\\hline
+s_1 & \tfrac17 & -1 & -\tfrac37 & 1 & \tfrac27 & 0 & 0\\
+s_2 & \tfrac37 & -1 & -\tfrac27 & 0 & -\tfrac17 & 1 & 0\\\hline
+-z   & -\tfrac97       & 5         & \tfrac{6}{7}         & 0        & -\tfrac{4}{7} & 0 & 0
+\end{array}
+\]
+
+Step 5: Determine the entering variable. \\
+
+We are doing a \emph{maximization} problem, so in the objective row (the \(z\)-row) we look for the largest (most positive) coefficient among the nonbasics, which is \(3\) (for \(x_2\)).  However, looking at the entry value, both $-\frac{7}{2}$ and $-\frac{3}{2}$ are negative, so we need to find the other reduced cost, which is 2 (for \(x_4\)).  Therefore, \(x_4\) enters the basis.
+
 \newpage
 
 \section*{Exercise 5}
