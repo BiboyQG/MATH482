@@ -160,7 +160,42 @@ Therefore, the maximum value of the objective function is $4$.
 \item Show that there is no way to rewrite the constraint $|x| + |y| \geq 5$ as a combination of linear constraints.
 \end{enumerate}
 
-\textbf{Solution: }
+\textbf{Solution:}
+
+(a) To rewrite $|x| + |y| \leq 5$ as linear constraints:
+
+\begin{itemize}
+\item $|x|$ can be either $x$ or $-x$ depending on whether $x$ is positive or negative. Similarly, $|y|$ can be either $y$ or $-y$.
+
+\item This gives us four possible combinations:
+   \begin{align*}
+   \text{When } x \geq 0, y \geq 0: & \quad x + y \leq 5 \\
+   \text{When } x \geq 0, y \leq 0: & \quad x - y \leq 5 \\
+   \text{When } x \leq 0, y \geq 0: & \quad -x + y \leq 5 \\
+   \text{When } x \leq 0, y \leq 0: & \quad -x - y \leq 5
+   \end{align*}
+
+\item Therefore, $|x| + |y| \leq 5$ is equivalent to the combination of the following linear constraints:
+   \begin{align*}\left\{\begin{array}{l}
+   x + y \leq 5 \\
+   x - y \leq 5 \\
+   -x + y \leq 5 \\
+   -x - y \leq 5
+   \end{array}\right.
+   \end{align*}
+
+\end{itemize}
+
+(b) To prove that $|x| + |y| \geq 5$ cannot be written as a combination of linear constraints:
+
+\begin{itemize}
+\item Suppose, for contradiction, that $|x| + |y| \geq 5$ could be written as a finite set of linear constraints.
+\item The feasible region of $|x| + |y| \geq 5$ is the exterior of a diamond-shaped region, which is non-convex.
+\item However, by definition of feasible region, it is the intersection of all half-planes defined by the linear constraints of the LP, which should be convex.
+\item Contradiction.
+\end{itemize}
+Therefore, it is impossible to rewrite $|x| + |y| \geq 5$ as a combination of linear constraints.
+
 \newpage
 
 \section*{Exercise 4}
