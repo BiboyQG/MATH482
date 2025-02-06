@@ -11,7 +11,7 @@
 \pagestyle{fancy}
 \fancyhead[L]{Banghao Chi}
 \fancyhead[C]{Homework 1}
-\fancyhead[R]{25th Jan}
+\fancyhead[R]{6th Feb}
 
 \fancyfoot[C]{\thepage}
 
@@ -269,8 +269,50 @@ x \in \mathbb{R}^n \\
 \text{subject to} \quad & Ax \leq b
 \end{align*}
 
-Let $u, v \in \mathbb{R}^n$ be feasible solutions. Prove that $u$ and $v$ are optimal solutions if and only if $(u + v)/2$ is an optimal solution.
+Let $u, v \in \mathbb{R}^n$ be feasible solutions. Prove that $u$ and $v$ are optimal solutions if and only if $(u + v)/2$ is an optimal solution. \\
 
-\textbf{Solution: }
+\textbf{Solution: } \\
+
+Since this is a if and only if statement, we need to prove both directions. \\
+
+($\Rightarrow$) First, let's prove that if $u$ and $v$ are optimal solutions, then $(u + v)/2$ is an optimal solution.
+
+1) Since $u$ and $v$ are feasible solutions:
+   \[ Au \leq b \text{ and } Av \leq b \]
+
+2) Therefore:
+   \[ A(\frac{u + v}{2}) = \frac{Au + Av}{2} \leq \frac{b + b}{2} = b \]
+   Thus, $(u + v)/2$ is feasible.
+
+3) Since $u$ and $v$ are optimal solutions, they achieve the same objective value:
+   \[ c^\top u = c^\top v = z^* \]
+   where $z^*$ is the optimal objective value.
+
+4) Therefore:
+   \[ c^\top(\frac{u + v}{2}) = \frac{c^\top u + c^\top v}{2} = \frac{z^* + z^*}{2} = z^* \]
+
+5) Hence, $(u + v)/2$ achieves the optimal objective value and is feasible, making it an optimal solution. \\
+
+($\Leftarrow$) Now, let's prove that if $(u + v)/2$ is optimal, then both $u$ and $v$ are optimal. \\
+
+1) Let $z^*$ be the optimal objective value. Then:
+   \[ c^\top(\frac{u + v}{2}) = z^* \]
+
+2) By linearity:
+   \[ \frac{c^\top u + c^\top v}{2} = z^* \]
+
+3) Since $u$ and $v$ are feasible solutions:
+   \[ c^\top u \leq z^* \text{ and } c^\top v \leq z^* \]
+
+4) If either $c^\top u < z^*$ or $c^\top v < z^*$, then:
+   \[ \frac{c^\top u + c^\top v}{2} < z^* \]
+   This would contradict step 2.
+
+5) Therefore:
+   \[ c^\top u = z^* \text{ and } c^\top v = z^* \]
+
+Thus, both $u$ and $v$ must be optimal solutions. \\
+
+\textbf{Conclusion:} We have shown both directions of the if and only if statement, completing the proof.
 
 \end{document}
