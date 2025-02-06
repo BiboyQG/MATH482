@@ -190,7 +190,7 @@ Therefore, the maximum value of the objective function is $4$.
 
 \begin{itemize}
 \item Suppose, for contradiction, that $|x| + |y| \geq 5$ could be written as a finite set of linear constraints.
-\item The feasible region of $|x| + |y| \geq 5$ is the exterior of a diamond-shaped region, which is non-convex.
+\item The feasible region of $|x| + |y| \geq 5$ is the exterior of a diamond-shaped region(in this case, it is the union of the half-planes defined by the linear constraints, which is not necessarily convex), which is non-convex. We can verify this by taking two points (6, 0), and (-6, 0), which both satisfy $|x| + |y| = 6 > 5$, but the midpoint of the line segment connecting them does not, in this case, $|0| + |0| = 0 < 5$.
 \item However, by definition of feasible region, it is the intersection of all half-planes defined by the linear constraints of the LP, which should be convex.
 \item Contradiction.
 \end{itemize}
