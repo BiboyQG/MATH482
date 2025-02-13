@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+
+\DeclareMathOperator{\R}{\mathbb R}
+
+\pagestyle{fancy}
+\fancyhead[L]{Banghao Chi}
+\fancyhead[C]{Homework 2}
+\fancyhead[R]{14th Feb}
+
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\begin{document}
+
+\section*{Exercise 1}
+Solve the following LP using the two phase simplex algorithm:
+\begin{align*}
+\text{maximize} \quad & 3y + z \\
+x, y, z \in \mathbb{R} & \\
+\text{subject to} \quad & x + 2y + z \leq 2, \\
+& 2x + y - z \leq -1, \\
+& 3x + 2y + z \leq 3, \\
+& x, y, z \geq 0
+\end{align*}
+
+\textbf{Solution:}
+
+\newpage
+
+\section*{Exercise 2}
+Use lexicographic pivoting to solve the following linear program:
+\begin{align*}
+\text{maximize} \quad & x - y \\
+x, y \in \mathbb{R} & \\
+\text{subject to} \quad & x - 2y \leq 0, \\
+& x - 3y \leq 0, \\
+& y \leq 3, \\
+& x, y \geq 0
+\end{align*}
+
+\textbf{Solution:}
+
+\newpage
+
+\section*{Exercise 3}
+Consider the following LP:
+\begin{align*}
+\text{maximize} \quad & c^T x \\
+x \in \mathbb{R}^n & \\
+\text{subject to} \quad & Ax \leq 0, \\
+& x \geq 0
+\end{align*}
+Show that either $x = 0$ is an optimal solution or else the LP is unbounded. \\
+
+\textbf{Solution:}
+
+\newpage
+
+\section*{Exercise 4}
+Prove that the variable that becomes nonbasic in one iteration of the simplex method cannot become basic in the next iteration. \\
+
+\textbf{Solution:}
+
+\newpage
+
+\section*{Exercise 5}
+Let $A, B \subseteq \mathbb{R}^n$ be nonempty convex sets. Determine with explanation the following:
+\begin{enumerate}
+\item[(a)] Can $A \cup B$ be convex?
+\item[(b)] Is $A \cap B$ always convex?
+\item[(c)] Can $B \setminus A$ be convex?
+\item[(d)] Can $\mathbb{R}^n \setminus A$ be convex?
+\end{enumerate}
+
+\textbf{Solution:}
+
+
+\end{document}
