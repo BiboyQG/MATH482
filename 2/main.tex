@@ -31,7 +31,7 @@ x, y, z \in \mathbb{R} & \\
 & x, y, z \geq 0
 \end{align*}
 
-\textbf{Solution:}
+\textbf{Solution:} \\
 
 \newpage
 
@@ -80,7 +80,40 @@ Let $A, B \subseteq \mathbb{R}^n$ be nonempty convex sets. Determine with explan
 \item[(d)] Can $\mathbb{R}^n \setminus A$ be convex?
 \end{enumerate}
 
-\textbf{Solution:}
+\textbf{Solution:} \\
 
+(a) Can $A \cup B$ be convex?
+\begin{itemize}
+\item $A \cup B$ can be convex, but it can also be non-convex.
+    \begin{enumerate}
+    \item Convex example: Let $A = [0,1]$ and $B = [1,2]$ in $\mathbb{R}$. Then $A \cup B = [0,2]$, which is convex.
+    \item Non-convex example: Let $A = [0,1]$ and $B = [2,3]$ in $\mathbb{R}$. Then $A \cup B = [0,1] \cup [2,3]$ is not convex because if we take $x = 0.5 \in A$ and $y = 2.5 \in B$, then their midpoint $\frac{x+y}{2} = 1.5 \notin A \cup B$.
+    \end{enumerate}
+\end{itemize}
+
+(b) Is $A \cap B$ always convex?
+\begin{itemize}
+\item Yes, the intersection of any number of convex sets is always convex.
+\item Proof: Let $x, y \in A \cap B$ and $\lambda \in [0,1]$. Then:
+    \begin{enumerate}
+    \item Since $x,y \in A$ and $A$ is convex, $\lambda x + (1-\lambda)y \in A$
+    \item Since $x,y \in B$ and $B$ is convex, $\lambda x + (1-\lambda)y \in B$
+    \item Therefore, $\lambda x + (1-\lambda)y \in A \cap B$
+    \end{enumerate}
+\end{itemize}
+
+(c) Can $B \setminus A$ be convex?
+\begin{itemize}
+\item $B \setminus A$ can be convex, but it can also be non-convex.
+\item Convex example: In $\mathbb{R}$, let $B = [0,2]$ and $A = [2,3]$. Then $B \setminus A = [0,2)$ is convex.
+\item Non-convex example: In $\mathbb{R}$, let $B = [0,3]$ and $A = [1,2]$. Then $B \setminus A = [0,1) \cup (2,3]$ is not convex.
+\end{itemize}
+
+(d) Can $\mathbb{R}^n \setminus A$ be convex?
+\begin{itemize}
+\item $\mathbb{R}^n \setminus A$ can be convex, but it can also be non-convex.
+\item Convex example: Let $A = \{x \in \mathbb{R}^n : \|x\| \geq 1\}$. Then $\mathbb{R}^n \setminus A = \{x \in \mathbb{R}^n : \|x\| < 1\}$(the unit ball) is convex.
+\item Non-convex example: Let $A = \{x \in \mathbb{R}^n : \|x\| < 1\}$. Then $\mathbb{R}^n \setminus A = \{x \in \mathbb{R}^n : \|x\| \geq 1\}$ which is not convex(for any two points in $\mathbb{R}^n$ symmetric about the origin, their midpoint, which is the origin itself, is not in $\mathbb{R}^n \setminus A$), so $\mathbb{R}^n \setminus A$ is not convex.
+\end{itemize}
 
 \end{document}
