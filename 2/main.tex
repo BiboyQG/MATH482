@@ -60,7 +60,40 @@ x \in \mathbb{R}^n & \\
 \end{align*}
 Show that either $x = 0$ is an optimal solution or else the LP is unbounded. \\
 
-\textbf{Solution:}
+\textbf{Solution:} \\
+
+We first note that $x = 0$ is always a feasible solution. \\
+
+If $x^*$ is a feasible solution other than 0, then:
+\begin{align*}
+Ax^* &\leq 0 \\
+x^* &\geq 0
+\end{align*}
+
+Consider any scalar $\lambda \geq 0$ and plugging $\lambda x^*$ into the LP, we get:
+\begin{align*}
+A(\lambda x^*) &= \lambda(Ax^*) \leq 0 \quad \text{(since $Ax^* \leq 0$ and $\lambda \geq 0$)} \\
+\lambda x^* &\geq 0 \quad \text{(since $x^* \geq 0$ and $\lambda \geq 0$)}
+\end{align*}
+
+which shows that if $x^*$ is feasible, then $\lambda x^*$ is also feasible for any $\lambda \geq 0$. \\
+
+Plugging this into the objective function, we get:
+\begin{align*}
+c^T(\lambda x^*) = \lambda(c^T x^*)
+\end{align*}
+
+\begin{itemize}
+\item If $c^T x^* > 0$, then as $\lambda \to \infty$, the objective value $\lambda(c^T x^*)$ will approach infinity, making the problem unbounded.
+\item If $c^T x^* < 0$, then $x^*$ cannot be optimal since $x = 0$ would give a better objective value which is 0, which in this case makes $x = 0$ the optimal solution since $x^*$ represents any feasible solution except for $x = 0$.
+\item If $c^T x^* = 0$, then $x = 0$ is also optimal.
+\end{itemize}
+
+Therefore, either:
+\begin{itemize}
+\item $x = 0$ is optimal (when no feasible solution exists with positive objective value), or
+\item The problem is unbounded (when there exists a feasible solution $x^*$ with $c^T x^* > 0$)
+\end{itemize}
 
 \newpage
 
