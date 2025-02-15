@@ -48,7 +48,51 @@ x, y \in \mathbb{R} & \\
 & x, y \geq 0
 \end{align*}
 
-\textbf{Solution:}
+\textbf{Solution:} \\
+
+We first add slack variables to ensure equality constraints. After that, we add $\epsilon_1, \epsilon_2, \epsilon_3$ which are $1 \gg \epsilon_1 \gg \epsilon_2 \gg \epsilon_3 \gg 0$ to the objective function to avoid cycling.
+
+\[
+\begin{array}{c|rrrrr|rrrrr}
+ & x & y & s_1 & s_2 & s_3 & & \epsilon_1 & \epsilon_2 & \epsilon_3 \\
+\hline
+s_1 & 1 & -2 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+s_2 & 1 & -3 & 0 & 1 & 0 & 0 & 0 & 1 & 0 \\
+s_3 & 0 & 1 & 0 & 0 & 1 & 3 & 0 & 0 & 1 \\
+\hline
+-z & 1 & -1 & 0 & 0 & 0 & 0 & 0 & 0 & 0
+\end{array}
+\]
+
+Let $x$ enters and $s_1$ leaves, we get:
+
+\[
+\begin{array}{c|rrrrr|rrrrr}
+ & x & y & s_1 & s_2 & s_3 & & \epsilon_1 & \epsilon_2 & \epsilon_3 \\
+\hline
+x & 1 & -2 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+s_2 & 0 & -1 & -1 & 1 & 0 & 0 & -1 & 1 & 0 \\
+s_3 & 0 & 1 & 0 & 0 & 1 & 3 & 0 & 0 & 1 \\
+\hline
+-z & 0 & 1 & -1 & 0 & 0 & 0 & -1 & 0 & 0
+\end{array}
+\]
+
+Let $y$ enters and $s_3$ leaves, we get:
+
+\[
+\begin{array}{c|rrrrr|rrrrr}
+ & x & y & s_1 & s_2 & s_3 & & \epsilon_1 & \epsilon_2 & \epsilon_3 \\
+\hline
+x & 1 & 0 & 1 & 0 & 2 & 6 & 1 & 0 & 2 \\
+s_2 & 0 & 0 & -1 & 1 & 1 & 3 & -1 & 1 & 1 \\
+y & 0 & 1 & 0 & 0 & 1 & 3 & 0 & 0 & 1 \\
+\hline
+-z & 0 & 0 & -1 & 0 & -1 & -3 & -1 & 0 & -1
+\end{array}
+\]
+
+Hence we reach the optimal value $z = 3$.
 
 \newpage
 
@@ -113,15 +157,15 @@ Without loss of generality, consider a maximization problem. \\
     \item Let $B_t$ be the set of basic variables
     \item Let $N_t$ be the set of nonbasic variables
     \item $x_k \in B_t$ initially
-    \item Let $x_e$ be the entering variable, where $e \in N_t$
+    \item Let $x_e$ be the entering variable, where $x_e \in N_t$
+    \item $c_k = 0$ (since $x_k$ is basic)
     \end{itemize}
 
 3) For $x_k$ to leave the basis:
     \begin{itemize}
     \item ${c}_e > 0$ (since it's a maximization problem)
     \item $a_{ke} > 0$ (pivot element must be positive)
-    \item $c_k = 0$ (since $x_k$ is nonbasic)
-    \item $x_k$ gives the minimum ratio.
+    \item The row of $x_k$ gives the minimum ratio.
     \end{itemize}
 
 \[
