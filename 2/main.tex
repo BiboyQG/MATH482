@@ -33,6 +33,8 @@ x, y, z \in \mathbb{R} & \\
 
 \textbf{Solution:} \\
 
+Since I registered the three-credits section, I'll skip this exercise.
+
 \newpage
 
 \section*{Exercise 2}
@@ -100,7 +102,51 @@ Therefore, either:
 \section*{Exercise 4}
 Prove that the variable that becomes nonbasic in one iteration of the simplex method cannot become basic in the next iteration. \\
 
-\textbf{Solution:}
+\textbf{Solution:} \\
+
+Without loss of generality, consider a maximization problem. \\
+
+1) Suppose variable $x_k$ is basic in iteration $t$ and becomes nonbasic, then becomes basic again in iteration $t+1$. \\
+
+2) At iteration $t$:
+    \begin{itemize}
+    \item Let $B_t$ be the set of basic variables
+    \item Let $N_t$ be the set of nonbasic variables
+    \item $x_k \in B_t$ initially
+    \item Let $x_e$ be the entering variable, where $e \in N_t$
+    \end{itemize}
+
+3) For $x_k$ to leave the basis:
+    \begin{itemize}
+    \item ${c}_e > 0$ (since it's a maximization problem)
+    \item $a_{ke} > 0$ (pivot element must be positive)
+    \item $c_k = 0$ (since $x_k$ is nonbasic)
+    \item $x_k$ gives the minimum ratio.
+    \end{itemize}
+
+\[
+\begin{array}{c|cc|c}
+    & x_e & x_k & \\
+\hline
+    x_k & a_{ke} & 1 & \\
+    \hline
+    & c_e & c_k = 0 &  \\
+\end{array}
+\]
+
+4) After pivot operation (beginning of iteration $t+1$):
+    \begin{itemize}
+    \item The new reduced cost for $x_k$ is:
+     ${c}_k^{new} = 0 - \frac{{c}_e}{a_{ke}} \cdot 1 = - \frac{{c}_e}{a_{ke}} < 0$
+    \end{itemize}
+
+5) For $x_k$ to enter in iteration $t+1$:
+    \begin{itemize}
+    \item It would need ${c}_k^{new} > 0$ (since it's a maximization problem)
+    \item But we proved ${c}_k^{new} < 0$
+    \end{itemize}
+
+Contradiction. Therefore, a variable that becomes nonbasic in iteration $t$ cannot become basic in iteration $t+1$.
 
 \newpage
 
