@@ -1,0 +1,101 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+
+\DeclareMathOperator{\R}{\mathbb R}
+
+\pagestyle{fancy}
+\fancyhead[L]{Banghao Chi}
+\fancyhead[C]{Homework 3}
+\fancyhead[R]{28th Feb}
+
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\begin{document}
+
+\section*{Exercise 1}
+Consider the following LP:
+\begin{align*}
+\max_{x, y, z \in \mathbb{R}} \quad & x + y + z \\
+\text{subject to} \quad & 2x + y + 2z \leq 14, \\
+& x + z \leq 8, \\
+& 2x + 2y - z \leq 18, \\
+& x, y, z \geq 0
+\end{align*}
+
+Write down the dual LP. \\
+
+\textbf{Solution:}
+
+
+
+\newpage
+
+\section*{Exercise 2}
+Solve the dual of the following LP (no need to find an optimal vector, just the optimum value):
+\begin{align*}
+\min_{x \in \mathbb{R}^4} \quad & x_1 + x_2 + x_3 + x_4 \\
+\text{subject to} \quad & x_1 + x_3 = 4, \\
+& x_2 + x_3 + x_4 = 4, \\
+& x_3 + x_4 = 1, \\
+& x \geq 0
+\end{align*}
+
+\textbf{Solution:}
+
+
+
+\newpage
+
+\section*{Exercise 3}
+Determine whether $(5, 4, 0)$ is the optimal solution to the LP from problem 1 using complementary slackness. \\
+
+\textbf{Solution:}
+
+
+
+\newpage
+
+\section*{Exercise 4}
+Consider the following LP:
+\begin{align*}
+\max_{x \in \mathbb{R}^n} \quad & c^{\top} x \\
+\text{subject to} \quad & a^{\top} x \leq 1, \\
+& x \geq 0
+\end{align*}
+where $a, c \in \mathbb{R}^n$ and $a, c > 0$.
+
+\begin{enumerate}[(a)]
+    \item Write down the dual LP.
+    \item Determine the optimal dual solution.
+    \item Find a primal solution with the same objective value.
+\end{enumerate}
+
+\textbf{Solution:}
+
+
+
+\newpage
+
+\section*{Exercise 5}
+Consider the following LP:
+\begin{align*}
+\max_{x \in \mathbb{R}^n} \quad & c^{\top} x \\
+\text{subject to} \quad & Ax \leq b, \\
+& x \geq 0
+\end{align*}
+
+Derive conditions on $A$, $b$, and $c$ such that the dual of the above is identical to the LP itself. \\
+
+\textbf{Solution:}
+
+
+
+\end{document}
