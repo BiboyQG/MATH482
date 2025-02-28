@@ -55,9 +55,22 @@ Solve the dual of the following LP (no need to find an optimal vector, just the 
 & x \geq 0
 \end{align*}
 
-\textbf{Solution:}
+\textbf{Solution:} \\
 
+The dual LP is:
+\begin{align*}
+\max_{u, v, w \in \mathbb{R}} \quad & 4u + 4v + w \\
+\text{subject to} \quad & u \leq 1, &(C_1)\\
+& v \leq 1, &(C_2)\\
+& u + v + w \leq 1, &(C_3)\\
+& v + w \leq 1, &(C_4)
+\end{align*}
 
+Name the above four constraints $C_1, C_2, C_3, C_4$ respectively. \\
+
+Our objective function is $4u + 4v + w$ = $3C_1 + 3C_2 + C_3 \leq 7$. \\
+
+Therefore, the optimal value is 7.
 
 \newpage
 
