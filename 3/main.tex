@@ -135,7 +135,7 @@ where $a, c \in \mathbb{R}^n$ and $a, c > 0$.
 
 \textbf{Solution:}
 
-
+Since I registered 3 credits section, I would like to skip this problem.
 
 \newpage
 
@@ -149,8 +149,20 @@ Consider the following LP:
 
 Derive conditions on $A$, $b$, and $c$ such that the dual of the above is identical to the LP itself. \\
 
-\textbf{Solution:}
+\textbf{Solution:} \\
 
+The dual LP is:
+\begin{align*}
+\min_{u \in \mathbb{R}^m} \quad & b^{\top} u \\
+\text{subject to} \quad & A^{\top} u \geq c, \\
+& u \geq 0
+\end{align*}
 
+First for the objective function, both problems must have the same form, like both maximization or both minimization. Without loss of generality, we can convert the dual minimization to maximization: $\max_{u \in \mathbb{R}^m} -b^{\top} u$.
+For the objectives to match: $c^{\top} x = -b^{\top} u$ when $x = u$, which gives us $c = -b$. \\
+
+Second for the constraints, both problems must have the same of them: Negate the dual constraint: $-A^{\top}u \leq -c$. For this to match $Ax \leq b$ when $x = u$: $-A^{\top} = A$ and $-c = b$, which gives us: $A^{\top} = -A$ and actually helps us confirm $c = -b$ \\
+
+Therefore, the conditions are: $A^{\top} = -A$ and $c = -b$.
 
 \end{document}
