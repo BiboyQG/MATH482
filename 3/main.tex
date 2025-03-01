@@ -77,9 +77,44 @@ Therefore, the optimal value is 7.
 \section*{Exercise 3}
 Determine whether $(5, 4, 0)$ is the optimal solution to the LP from problem 1 using complementary slackness. \\
 
-\textbf{Solution:}
+\textbf{Solution:} \\
 
+Verify if the point $(5,4,0)$ satisfies all constraints:
+\begin{align*}
+&2(5) + 4 + 2(0) = 14 \leq 14 \checkmark\\
+&5 + 0 = 5 \leq 8 \checkmark\\
+&2(5) + 2(4) - 0 = 18 \leq 18 \checkmark
+\end{align*}
 
+The point is feasible. The dual LP is:
+\begin{align*}
+\min_{u, v, w \in \mathbb{R}} \quad & 14u + 8v + 18w \\
+\text{subject to} \quad & 2u + v + 2w \geq 1, \\
+& u + 2w \geq 1, \\
+& 2u + v - w \geq 1, \\
+& u, v, w \geq 0
+\end{align*}
+
+Now we find $(u^*, v^*, w^*)$ that satisfies complementary slackness with $(5,4,0)$:
+\begin{itemize}
+    \item $v^* = 0$, since $5 + 0 = 5 < 8$
+    \item $2u^* + v^* + 2w^* = 1$, since $5 > 0$
+    \item $u^* + 2w^* = 1$, since $4 > 0$
+\end{itemize}
+
+Hence, we get $(u^*, v^*, w^*) = (0, 0, 0.5)$. \\
+
+Now we check if $(u^*, v^*, w^*)$ is dual feasible:
+
+\begin{align*}
+2(0) + 0 + 2(\frac{1}{2}) &= 1 \geq 1 \checkmark\\
+0 + 2(\frac{1}{2}) &= 1 \geq 1 \checkmark\\
+2(0) + 0 - \frac{1}{2} &= -\frac{1}{2} \not\geq 1 \times
+\end{align*}
+
+Therefore, $(u^*, v^*, w^*)$ is not dual feasible. \\
+
+By complementary slackness, we conclude that $(5,4,0)$ is not the optimal solution.
 
 \newpage
 
