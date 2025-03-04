@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+
+\DeclareMathOperator{\R}{\mathbb R}
+
+\pagestyle{fancy}
+\fancyhead[L]{Banghao Chi}
+\fancyhead[C]{Homework 4}
+\fancyhead[R]{2nd Mar}
+
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\begin{document}
+
+\section*{Exercise 1}
+Use the simplex method to solve the LP below. Then, use your final simplex tableau to find the optimal dual solution.
+
+\begin{align*}
+\text{maximize} \quad & x - y + z\\
+x, y, z \in \mathbb{R} \quad & \\
+\text{subject to} \quad & x + 2y + z \leq 5,\\
+& 2x + y + z \leq 6,\\
+& x, y, z \geq 0
+\end{align*}
+
+\textbf{Solution:} \\
+
+
+
+\newpage
+
+\section*{Exercise 2}
+Solve the following LP using the dual simplex method:
+
+\begin{align*}
+\text{minimize} \quad & x + y\\
+x, y \in \mathbb{R} \quad & \\
+\text{subject to} \quad & 2x + y \geq 3,\\
+& x + 3y \geq 4,\\
+& x, y \geq 0
+\end{align*}
+
+\textbf{Solution:} \\
+
+
+
+\newpage
+
+\section*{Exercise 3}
+Solve the following LP using the dual two-phase simplex method:
+
+\begin{align*}
+\text{maximize} \quad & 3x - 2y\\
+x, y \in \mathbb{R} \quad & \\
+\text{subject to} \quad & -2x + y \geq 1,\\
+& -x + y \leq 2,\\
+& x, y \geq 0
+\end{align*}
+
+\textbf{Solution:} \\
+
+
+
+\newpage
+
+\section*{Exercise 4}
+Prove that each iteration of the dual simplex method improves the dual optimal value. \\
+
+\textbf{Solution:} \\
+
+
+
+\newpage
+
+\section*{Exercise 5}
+Suppose that $x_0$ is a feasible solution to the following LP:
+
+\begin{align*}
+\text{minimize} \quad & c^\top x\\
+x \in \mathbb{R}^n \quad & \\
+\text{subject to} \quad & Ax = b,\\
+& x \geq 0
+\end{align*}
+
+Suppose additionally that $y \in \mathbb{R}^n$ satisfies $Ay = 0$, $c^\top y < 0$, and $y \geq 0$. Prove that the LP is unbounded. \\
+
+\textbf{Solution:} \\
+
+
+
+\end{document}
