@@ -215,7 +215,7 @@ x, y \in \mathbb{R} \quad & \\
 
 \textbf{Solution:} \\
 
-
+Since I registered 3 credits section, I'd like to skip this problem.
 
 \newpage
 
@@ -224,7 +224,38 @@ Prove that each iteration of the dual simplex method improves the dual optimal v
 
 \textbf{Solution:} \\
 
+Without loss of generality, we assume it is a maximization problem. \\
 
+We start with a dual feasible but primal infeasible basic solution. \\
+
+At each iteration:
+\begin{enumerate}
+    \item $x_r$ with $x_r < 0$ (primal infeasible) leaves the basis.
+    \item $x_s$ enters the basis using the following criteria:
+\begin{align*}
+s = \arg\min_{j \in N, a_{rj} < 0} \left\{ \frac{c_j}{|a_{rj}|} \right\}
+\end{align*}
+which maintains the dual feasibility is maintained after the pivot.
+\end{enumerate}
+
+The change in the dual objective value after this pivot is:
+\begin{align*}
+\Delta (-z) = -\frac{c_s \cdot x_r}{a_{rs}}
+\end{align*}
+
+Since:
+\begin{itemize}
+    \item $x_r < 0$ (the leaving variable is primal infeasible)
+    \item $a_{rs} < 0$ (from the pivot selection criteria)
+\end{itemize}
+
+And:
+\begin{itemize}
+    \item For maximization: $c_s \geq 0$ due to dual feasibility. Therefore $\Delta (-z) \leq 0$, meaning $\Delta z \geq 0$, objective value improves.
+    \item For minimization: $c_s \leq 0$ due to dual feasibility. Therefore $\Delta (-z) \geq 0$, meaning $\Delta z \leq 0$, objective value improves.
+\end{itemize}
+
+In both cases, the objective value improves in the desired direction, and thus we complete the proof.
 
 \newpage
 
