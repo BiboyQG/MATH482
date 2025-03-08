@@ -271,6 +271,31 @@ Suppose additionally that $y \in \mathbb{R}^n$ satisfies $Ay = 0$, $c^\top y < 0
 
 \textbf{Solution:} \\
 
+Let $x_t = x_0 + ty$ for any $t \geq 0$ and we verify that it is feasible. \\
 
+1. Equality constraints:
+   \begin{align*}
+   Ax_t &= A(x_0 + ty)\\
+   &= Ax_0 + tAy\\
+   &= b + t \cdot 0\\
+   &= b
+   \end{align*}
+
+   So $x_t$ satisfies $Ax = b$ for all $t \geq 0$. \\
+
+2. Non-negativity:
+   Since $x_0 \geq 0$, $y \geq 0$, and $t \geq 0$, we have $x_t = x_0 + ty \geq 0$. \\
+
+Therefore, $x_t$ is feasible for all $t \geq 0$. \\
+
+For the objective value:
+\begin{align*}
+c^{\top}x_t &= c^{\top}(x_0 + ty)\\
+&= c^{\top}x_0 + tc^{\top}y
+\end{align*}
+
+Since $c^{\top}y < 0$, as $t \to \infty$, we have $c^{\top}x_t \to -\infty$. \\
+
+Therefore, the LP is unbounded.
 
 \end{document}
