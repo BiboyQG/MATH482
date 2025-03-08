@@ -33,7 +33,102 @@ x, y, z \in \mathbb{R} \quad & \\
 
 \textbf{Solution:} \\
 
+Add slack variables $s_1$ and $s_2$ to that we end up with standard form:
+\begin{align*}
+x + 2y + z + s_1 &= 5\\
+2x + y + z + s_2 &= 6\\
+x, y, z, s_1, s_2 &\geq 0
+\end{align*}
 
+Initial simplex tableau:
+$$
+\begin{array}{c|ccccc|c}
+ & x & y & z & s_1 & s_2 &  \\
+\hline
+s_1 & 1 & 2 & 1 & 1 & 0 & 5 \\
+s_2 & 2 & 1 & 1 & 0 & 1 & 6 \\
+\hline
+-f & 1 & -1 & 1 & 0 & 0 & 0
+\end{array}
+$$
+
+Select $x$ as the entering variable. Ratios: $5/1 = 5 > 6/2 = 3$. So $s_2$ leaves.
+
+$$
+\begin{array}{c|ccccc|c}
+ & x & y & z & s_1 & s_2 &  \\
+\hline
+s_1 & 0 & \frac{3}{2} & \frac{1}{2} & 1 & -\frac{1}{2} & 2 \\
+x & 1 & \frac{1}{2} & \frac{1}{2} & 0 & \frac{1}{2} & 3 \\
+\hline
+-f & 0 & -\frac{3}{2} & \frac{1}{2} & 0 & -\frac{1}{2} & -3
+\end{array}
+$$
+
+Select $z$ as the entering variable. Ratios: $2/(\frac{1}{2}) = 4 < 3/(\frac{1}{2}) = 6$. So $s_1$ leaves.
+
+$$
+\begin{array}{c|ccccc|c}
+ & x & y & z & s_1 & s_2 &  \\
+\hline
+z & 0 & 3 & 1 & 2 & -1 & 4 \\
+x & 1 & -1 & 0 & -1 & 1 & 1 \\
+\hline
+-f & 0 & -3 & 0 & -1 & 0 & -5
+\end{array}
+$$
+
+Since all coefficients in the objective row are non-negative, we've reached optimality.
+
+The optimal solution is:
+\begin{align*}
+x &= 1\\
+y &= 0\\
+z &= 4\\
+\end{align*}
+
+We know that the optimal dual solution is given by:
+\begin{align*}
+    u^T = c_\mathcal{B}^T A_\mathcal{B}^{-1}
+\end{align*}
+
+Therefore, since we have:
+\begin{align*}
+c_\mathcal{B}^T = [1, 1]
+\end{align*}
+\begin{align*}
+A_\mathcal{B} = \begin{bmatrix} 
+1 & 1 \\ 
+2 & 1 
+\end{bmatrix}
+\end{align*}
+
+Compute the inverse:
+\begin{align*}
+A_\mathcal{B}^{-1} &= \frac{1}{1 \cdot 1 - 2 \cdot 1} \begin{bmatrix} 
+1 & -1 \\ 
+-2 & 1 
+\end{bmatrix} \\
+&= \frac{1}{-1} \begin{bmatrix} 
+1 & -1 \\ 
+-2 & 1 
+\end{bmatrix} \\
+&= \begin{bmatrix} 
+-1 & 1 \\ 
+2 & -1 
+\end{bmatrix}
+\end{align*}
+
+Therefore, the optimal dual solution is:
+\begin{align*}
+u^T &= c_\mathcal{B}^T A_\mathcal{B}^{-1} \\
+&= [1, 1] \begin{bmatrix} 
+-1 & 1 \\ 
+2 & -1 
+\end{bmatrix} \\
+&= [-1 + 2, 1 - 1] \\
+&= [1, 0]
+\end{align*}
 
 \newpage
 
