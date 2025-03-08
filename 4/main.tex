@@ -145,7 +145,60 @@ x, y \in \mathbb{R} \quad & \\
 
 \textbf{Solution:} \\
 
+Inverse the inequality constraints and add slack variables:
+\begin{align*}
+-2x - y + s_1 &= -3\\
+-x - 3y + s_2 &= -4\\
+x, y, s_1, s_2 &\geq 0
+\end{align*}
 
+Initial simplex tableau(which is dual feasible):
+$$
+\begin{array}{c|cccc|c}
+ & x & y & s_1 & s_2 &  \\
+\hline
+s_1 & -2 & -1 & 1 & 0 & -3 \\
+s_2 & -1 & -3 & 0 & 1 & -4 \\
+\hline
+-f & 1 & 1 & 0 & 0 & 0
+\end{array}
+$$
+
+$s_1$ leaves. Ratio: $1 / |-2| = 1/2 < 1 / |-1| = 1$. So $x$ enters.
+
+$$
+\begin{array}{c|cccc|c}
+ & x & y & s_1 & s_2 &  \\
+\hline
+x & 1 & \frac{1}{2} & -\frac{1}{2} & 0 & \frac{3}{2} \\
+s_2 & 0 & -\frac{5}{2} & -\frac{1}{2} & 1 & -\frac{5}{2} \\
+\hline
+-f & 0 & \frac{1}{2} & \frac{1}{2} & 0 & -\frac{3}{2}
+\end{array}
+$$
+
+$s_2$ leaves. Ratio: $1 / 2 / |-5/2| = 1/5 < 1 / 2 / |- 1 / 2| = 1$. So $y$ enters.
+
+$$
+\begin{array}{c|cccc|c}
+ & x & y & s_1 & s_2 &  \\
+\hline
+x & 1 & 0 & -\frac{3}{5} & \frac{1}{5} & 1 \\
+y & 0 & 1 & \frac{1}{5} & -\frac{2}{5} & 1 \\
+\hline
+-f & 0 & 0 & \frac{2}{5} & \frac{1}{5} & -2
+\end{array}
+$$
+
+Since all coefficients in the objective row are non-negative, we've reached optimality. \\
+
+The optimal solution is:
+\begin{align*}
+x &= 1\\
+y &= 1\\
+\end{align*}
+
+The optimal value is 2.
 
 \newpage
 
