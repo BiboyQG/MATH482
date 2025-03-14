@@ -53,7 +53,20 @@ For small values of $\delta$, describe the effect of the following changes on th
 
 \textbf{Solution: } \\
 
+\begin{enumerate}[label=(\alph*)]
+    \item For dual feasibility, we need $-(3+\delta) \leq 0$, which gives us $\delta \geq -3$. If $\delta$ changes within this range, the optimal solution remains the same but the objective value changes to $82 + 10\delta$ (since $x = 10$ in the optimal solution).
 
+    \item This changes the RHS of a tight constraint whose slack variable is $s_1$. So we compute the negative ratios $-\frac{\text{entry in RHS column}}{\text{entry in $s_1$'s column}}$ for each row:
+    \begin{itemize}
+        \item For $x$ row: $-\frac{10}{1} = -10$
+        \item For $s_2$ row: $-\frac{2}{1/2} = -4$
+        \item For $y$ row: $-\frac{8}{-1/2} = 16$
+    \end{itemize}
+
+    So the range is $-4 \leq \delta \leq 16$. For $\delta$ in this range, $x = 10 + \delta$, $y = 8$, and the objective value becomes $82 + 3\delta$.
+
+    \item This changes the RHS of a slack constraint whose slack variable is $s_2$. Since $s_2$ is basic with value 2 (not tight), the only limit on $\delta$ is $\delta \geq -2$. There is no change to the optimal solution or objective value as long as $\delta > -2$.
+\end{enumerate}
 
 \newpage
 
@@ -62,7 +75,7 @@ Use the dual simplex method to add the constraint $x+5y \leq 11$ to the LP from 
 
 \textbf{Solution: } \\
 
-
+Since I registered for the three credits section, I will not be doing this problem.
 
 \newpage
 
