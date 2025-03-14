@@ -169,6 +169,12 @@ Find the range of values of $p$ such that Bob playing option $b$ with probabilit
 
 \textbf{Solution: } \\
 
+Since we have $x$ which is Alice's strategy, we can compute that: $$x^T A = [1/3 \; 0 \; -1/3]$$
 
+So when not choosing option $a$ at all, we want $$x^T Ay \leq 1/3, \quad y = [0, p, 1-p]^T$$
+
+Therefore, we have: $-\frac{1-p}{3} \leq \frac{1}{3} \implies p \leq 2$. \\
+
+Therefore, the range of $p$ is $0 \leq p \leq 1$.
 
 \end{document}
