@@ -111,7 +111,45 @@ You may assume the players behave rationally, i.e., if a player throws out one f
 
 \textbf{Solution: } \\
 
+Let $(x,y)$ be a strategy of throwing out $x$ finger(s) and call out $y$ as their guesses. According to the question, we have the following payoff matrix for the row player:
 
+\[
+\begin{array}{c|ccccc}
+ & (1,2) & (1,3) & (1,4) & (2,3) & (2,4) \\
+\hline
+(1,2) & 0 & 2 & 2 & -3 & 0 \\
+(1,3) & -2 & 0 & 0 & 0 & 3 \\
+(1,4) & -2 & 0 & 0 & -3 & 0 \\
+(2,3) & 3 & 0 & 3 & 0 & -4 \\
+(2,4) & 0 & -3 & 0 & 4 & 0 \\
+\end{array}
+\] \\
+
+Let $x_i$ be the probability for the row player to choose strategy $i$, then we have the following row player's LP:
+\begin{align*}
+\text{maximize} & \quad u \\
+x \in \mathbb{R}^5, u \in \mathbb{R} & \\
+\text{subject to} & \quad u \leq -2x_2 - 2x_3 + 3x_4, \\
+& \quad u \leq 2x_1 - 3x_5, \\
+& \quad u \leq 2x_1 + 3x_4, \\
+& \quad u \leq -3x_1 - 3x_3 + 4x_5, \\
+& \quad u \leq 3x_2 - 4x_4, \\
+& \quad x_i \geq 0, \quad \forall i \in \{1,2,3,4,5\}, \\
+& \quad \sum_{i=1}^5 x_i = 1
+\end{align*}
+
+Let $y_i$ be the probability for the column player to choose strategy $i$, then we have the following column player's LP:
+\begin{align*}
+\text{minimize} & \quad v \\
+y \in \mathbb{R}^5, v \in \mathbb{R} & \\
+\text{subject to} & \quad v \geq -2y_2 - 2y_3 + 3y_4, \\
+& \quad v \geq 2y_1 - 3y_5, \\
+& \quad v \geq 2y_1 + 3y_4, \\
+& \quad v \geq -3y_1 - 3y_3 + 4y_5, \\
+& \quad v \geq 3y_2 - 4y_4, \\
+& \quad y_i \geq 0, \quad \forall i \in \{1,2,3,4,5\}, \\
+& \quad \sum_{i=1}^5 y_i = 1
+\end{align*}
 
 \newpage
 
