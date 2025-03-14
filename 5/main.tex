@@ -86,7 +86,21 @@ Determine optimal strategies for Alice and Bob. \\
 
 \textbf{Solution: } \\
 
+According to the question, we have the following payoff matrix showing Alice's payoffs (in cents):
 
+\[
+\begin{array}{c|cc}
+& \text{Bob: 5} & \text{Bob: 10} \\
+\hline
+\text{Alice: 5} & 5 & 0 \\
+\text{Alice: 10} & -10 & 10 \\
+\end{array}
+\]
+
+\begin{itemize}
+    \item For Alice, we want the find $\max(\min(\text{Rows}))$, and since $0 > -10$, putting a nickel down is the best strategy for Alice, since it presents a better worst case scenario.
+    \item For Bob, we want the find $\min(\max(\text{Columns}))$, and since $5 < 10$, putting a nickel down is the best strategy for Bob, since it presents a better worst case scenario.
+\end{itemize}
 
 \newpage
 
