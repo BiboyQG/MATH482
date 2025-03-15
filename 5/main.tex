@@ -142,11 +142,11 @@ Let $y_i$ be the probability for the column player to choose strategy $i$, then 
 \begin{align*}
 \text{minimize} & \quad v \\
 y \in \mathbb{R}^5, v \in \mathbb{R} & \\
-\text{subject to} & \quad v \geq -2y_2 - 2y_3 + 3y_4, \\
-& \quad v \geq 2y_1 - 3y_5, \\
-& \quad v \geq 2y_1 + 3y_4, \\
-& \quad v \geq -3y_1 - 3y_3 + 4y_5, \\
-& \quad v \geq 3y_2 - 4y_4, \\
+\text{subject to} & \quad v \geq 2y_2 + 2y_3 - 3y_4, \\
+& \quad v \geq -2y_1 + 3y_5, \\
+& \quad v \geq -2y_1 - 3y_4, \\
+& \quad v \geq 3y_1 + 3y_3 - 4y_5, \\
+& \quad v \geq -3y_2 + 4y_4, \\
 & \quad y_i \geq 0, \quad \forall i \in \{1,2,3,4,5\}, \\
 & \quad \sum_{i=1}^5 y_i = 1
 \end{align*}
