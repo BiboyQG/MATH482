@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+
+\DeclareMathOperator{\R}{\mathbb R}
+
+\pagestyle{fancy}
+\fancyhead[L]{Banghao Chi}
+\fancyhead[C]{Homework 6}
+\fancyhead[R]{12th Apr}
+
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\begin{document}
+
+\section*{Exercise 1}
+An interval matrix $A \in \{0, 1\}^{m\times n}$ is such that all 1s in each row occur consecutively. Precisely this means that for all $1 \leq i \leq m$, if $a_{ij} = 1$ and $a_{ik} = 1$ with $j \leq k$, then $a_{ih} = 1$ for all $j \leq h \leq k$. Prove that interval matrices are totally unimodular. \\
+
+\textit{Hint:} Recall that $\det(B) = \det(B')$ if $B'$ is obtained from $B$ by applying the column operation $C_i = C_i + kC_j$ where $j \neq i$. \\
+
+\textbf{Solution:} \\
+
+
+
+\newpage
+
+\section*{Exercise 2}
+Consider the bipartite graph with vertices $\{a_1, a_2, \ldots, a_{10}\}$ on one side, vertices $\{b_1, b_2, \ldots, b_{10}\}$ on the other side, and an edge between $a_i$ and $b_j$ if the product $ij$ is a multiple of 6. \\
+
+Find a largest matching in this graph, and show that it cannot be any larger by finding a vertex cover of the same size. \\
+
+\textbf{Solution:} \\
+
+
+
+\newpage
+
+\section*{Exercise 3}
+A bipartite graph $(X,Y,E)$ has $|X| = |Y| = n$ and is $r$-regular: every vertex (in $X$ or in $Y$) is the endpoint of exactly $r$ edges.
+
+\begin{itemize}
+    \item[(a)] Determine $|E|$, the number of edges in the graph.
+    \item[(b)] Show that any vertex cover must contain at least $n$ vertices.
+    
+    This implies that there is a matching of size $n$, which matches every vertex in $X$ to a vertex in $Y$.
+\end{itemize}
+
+\textbf{Solution:} \\
+
+
+
+\newpage
+
+\section*{Exercise 4}
+Find examples of networks with the following properties:
+
+\begin{itemize}
+    \item[(a)] A network with a unique maximum flow, but multiple minimum cuts.
+    \item[(b)] A network with multiple maximum flows, but a unique minimum cut.
+    \item[(c)] A network with multiple maximum flows and multiple minimum cuts.
+\end{itemize}
+
+For each example, describe the maximum flow(s) and the minimum cut(s). \\
+
+\textbf{Solution:} \\
+
+
+
+\newpage
+
+\section*{Exercise 5}
+Consider the network below, with label $x(y)$ denoting a flow of $x$ and a total capacity of $y$ along an edge. Draw the residual graph, and use it to list all possible augmenting paths. \\
+
+\textbf{Solution:} \\
+
+
+
+\end{document}
