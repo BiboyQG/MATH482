@@ -78,7 +78,43 @@ A bipartite graph $(X,Y,E)$ has $|X| = |Y| = n$ and is $r$-regular: every vertex
 
 \textbf{Solution:} \\
 
+\begin{itemize}
+    \item[(a)] $|E| = rn$
 
+    \item[(b)] Suppose there exists a vertex cover $C$ with $|C| < n$ vertices.
+
+    Let $C_X = C \cap X$ and $C_Y = C \cap Y$ be the vertices in the cover from sets $X$ and $Y$ respectively.
+    So $|C_X| + |C_Y| = |C| < n$.
+    
+    Since $C$ is a vertex cover, there cannot be any edge between $X - C_X$ and $Y - C_Y$.
+    Otherwise, such an edge would not be covered by any vertex in $C$.
+    
+    The number of vertices not in the cover are:
+    $|X - C_X| = n - |C_X|$
+    $|Y - C_Y| = n - |C_Y|$
+    
+    Since $|C_X| + |C_Y| < n$, we have:
+    $|C_X| < n - |C_Y|$
+    $|X - C_X| > |Y - C_Y|$
+    
+    Since the graph is $r$-regular, each vertex in $X - C_X$ has exactly $r$ neighbors, all of which must be in $C_Y$ (as no edge can connect to $Y - C_Y$).
+    
+    So the total number of edges between $X - C_X$ and $C_Y$ is:
+    $r \cdot |X - C_X| = r(n - |C_X|)$
+    
+    But each vertex in $C_Y$ can be incident to at most $r$ edges.
+    So the maximum number of edges that can be incident to vertices in $C_Y$ is:
+    $r \cdot |C_Y|$
+    
+    This gives us:
+    $r(n - |C_X|) \leq r|C_Y|$
+    $n - |C_X| \leq |C_Y|$
+    $n \leq |C_X| + |C_Y| = |C|$
+    
+    This contradicts our assumption that $|C| < n$.
+    
+    Therefore, any vertex cover must contain at least $n$ vertices.
+\end{itemize}
 
 \newpage
 
