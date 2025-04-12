@@ -27,7 +27,31 @@ An interval matrix $A \in \{0, 1\}^{m\times n}$ is such that all 1s in each row 
 
 \textbf{Solution:} \\
 
+Let $B$ be any square submatrix of size $n \times n$ from the interval matrix $A$. Due to the interval property, in each row of $B$, the 1s occur consecutively. \\
 
+For each row $i$ of $B$, let $j_i$ be the leftmost column such that $B_{i,j_i} = 1$. By the interval property, if $B_{i,j_i} = 1$ and $B_{i,k} = 1$ with $j_i < k$, then $B_{i,h} = 1$ for all $j_i \leq h \leq k$. \\
+
+For each row $i$, for all columns $k > j_i$ where $B_{i,k} = 1$, we apply the column operation:
+\begin{align*}
+C_k = C_k - C_{j_i}
+\end{align*}
+
+This would replace all 1s in row $i$ (except the leftmost) with 0s. After performing this for all rows, we have a matrix $B'$ where each row has at most one 1. \\
+
+For the determinant of $B'$: \\
+
+Case 1: If $B'$ has a row with no 1s, then $\det(B') = 0$. \\
+
+Case 2: If $B'$ has a column with no 1s, then $\det(B') = 0$. \\
+
+Case 3: Otherwise, each row and each column of $B'$ contains exactly one 1. In this case, $B'$ is a permutation matrix, and the determinant of a permutation matrix is either 1 or -1, depending on the parity of the permutation. \\
+
+Since column operations of the form $C_i = C_i + kC_j$ ($i \neq j$) preserve the determinant, we have:
+\begin{align*}
+\det(B) = \det(B') \in \{-1, 0, 1\}
+\end{align*}
+
+Therefore, every square submatrix of the interval matrix $A$ has determinant in $\{-1, 0, 1\}$, proving that interval matrices are totally unimodular.
 
 \newpage
 
