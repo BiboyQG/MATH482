@@ -219,8 +219,63 @@ where
     \item[4.] Let $(N, A)$ be an instance of the supply-and-demand version of max flow with capacities $c$ and demands $d$. Recall the max-flow reduction from lecture. Prove that there is a feasible flow if and only if the optimal solution in the max-flow reduction saturates all arcs leaving $s$ and entering $t$ (an arc is saturated if the flow along it is equal to its capacity).
 
     \textbf{Solution:} \\
+Let the original digraph be \(N=(V,A)\) with capacity function \(c:A\to\mathbb R_{\ge0}\) and lower–bound (demand) function \(d:A\to\mathbb R_{\ge0}\) where \(0\le d(a)\le c(a)\) for every \(a\in A\).
 
+A flow \(f:A\to\mathbb R_{\ge0}\) is \textit{feasible} when
+\[
+d(a)\le f(a)\le c(a)\qquad(a\in A)
+\]
+and, for every vertex \(v\in V\),
+\[
+\sum_{a\in\delta^{-}(v)}f(a)=\sum_{a\in\delta^{+}(v)}f(a).
+\]
 
+Construct the auxiliary network \(N'=(V\cup\{s,t\},A')\) as follows.
+\begin{align*}
+c'(a) &= c(a)-d(a)                          && a\in A,\\
+b(v)  &= \sum_{a\in\delta^{-}(v)}d(a)-\sum_{a\in\delta^{+}(v)}d(a) && v\in V.
+\end{align*}
+If \(b(v)>0\) add arc \((s,v)\) with capacity \(b(v)\);  
+if \(b(v)<0\) add arc \((v,t)\) with capacity \(-b(v)\).
+
+Let  
+\[
+B=\sum_{b(v)>0}b(v)=\sum_{b(v)<0}(-b(v)),
+\]
+so the total capacity of arcs out of \(s\) (and into \(t\)) equals \(B\).
+
+(Feasible flow \(\Rightarrow\) saturated maximum flow)  
+Suppose a feasible flow \(f\) exists in \(N\).  Define \(g:A'\to\mathbb R_{\ge0}\) by
+\[
+g(a)=
+\begin{cases}
+f(a)-d(a) & a\in A,\\
+b(v)      & a=(s,v),\\
+-\,b(v)   & a=(v,t).
+\end{cases}
+\]
+For all \(a\in A\), \(0\le g(a)\le c'(a)\); every new arc carries its full capacity, so every arc out of \(s\) and into \(t\) is saturated.  At each original vertex \(v\),
+\[
+\sum_{a\in\delta^{-}(v)}g(a)-\sum_{a\in\delta^{+}(v)}g(a)
+=\bigl(\sum_{in}f-\sum_{out}f\bigr)-\bigl(\sum_{out}d-\sum_{in}d\bigr)
+=0-b(v)+b(v)=0,
+\]
+hence \(g\) is an \(s\)-\(t\) flow of value \(B\).  No flow can exceed \(B\), so \(g\) is maximum and every maximum flow must saturate all arcs incident to \(s\) and \(t\).
+
+(Saturated maximum flow \(\Rightarrow\) feasible flow)  
+Conversely, let \(g\) be any maximum \(s\)-\(t\) flow in \(N'\) that saturates every arc leaving \(s\) and entering \(t\); then the flow value is \(B\).  For each original arc set
+\[
+f(a)=g(a)+d(a).
+\]
+Capacity bounds hold because \(0\le g(a)\le c'(a)\).  For each \(v\in V\),
+\[
+\sum_{in}f-\sum_{out}f
+=\bigl(\sum_{in}g-\sum_{out}g\bigr)+\bigl(\sum_{in}d-\sum_{out}d\bigr)
+=0-b(v)=0,
+\]
+since the saturated arc \((s,v)\) or \((v,t)\) carries \(|b(v)|\) units.  Thus \(f\) is a feasible flow in \(N\).
+
+Therefore, a feasible flow exists in the original supply-and-demand instance \((N,c,d)\) \emph{iff} every optimal solution of the max-flow reduction saturates all arcs leaving \(s\) and entering \(t\).
 
     \newpage
 
@@ -282,7 +337,7 @@ where
 
     \textbf{Solution:} \\
 
-
+    Skipping this problem.
     
 \end{enumerate}
 
