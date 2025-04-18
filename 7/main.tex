@@ -81,7 +81,34 @@
 
     \textbf{Solution:} \\
 
+    \begin{enumerate}[(a)]
+\item Original capacities  
+\[
+s\to a:2,\; s\to b:6,\; a\to d:6,\; d\to t:6,\;
+d\to b:3,\; b\to c:5,\; c\to a:3,\; c\to t:1 .
+\]
 
+\item A feasible flow that yields the given residual graph can be found using all backward edges:
+\begin{align*}
+f(s,a)&=2, & f(s,b)&=4,\\
+f(a,d)&=5, & f(d,t)&=5,\\
+f(d,b)&=0, & f(b,c)&=4,\\
+f(c,a)&=3, & f(c,t)&=1.
+\end{align*}
+The value of the flow is \( |f| = 6 \).
+
+\item A cut having the same capacity  
+Take \( S=\{s,b,c\} \) and \( T=\{a,d,t\} \).  
+The forward edges from \( S \) to \( T \) are
+\[
+s\to a,\; c\to a,\; c\to t
+\]
+with total capacity
+\[
+2+3+1 = 6 = |f|.
+\]
+Hence the cut capacity equals the flow value.
+\end{enumerate}
 
     \newpage
     
@@ -111,8 +138,51 @@
 
     First, convert this matching into a feasible flow in a network. Then, find an augmenting path in that network, and use it to improve the matching to a larger one.
 
-    \textbf{Solution:} \\
+    \textbf{Solution:}
+\begin{itemize}
+    \item Source \(s\) connects to every \(u\in L=\{a,b,c\}\) with capacity \(1\).
+    \item Every \(v\in R=\{d,e,f\}\) connects to the sink \(t\) with capacity \(1\).
+    \item For each edge \((u,v)\) in the bipartite graph add the arc \(u\to v\) with capacity \(\infty\):
+          \[
+          a\to d,\; a\to f,\; b\to d,\; b\to e,\; c\to e .
+          \]
+\end{itemize}
 
+For feasible flow, we can let:
+\begin{align*}
+f(s,a)&=1, & f(a,d)&=1, & f(d,t)&=1,\\
+f(s,b)&=1, & f(b,e)&=1, & f(e,t)&=1,\\
+f(\text{all other arcs})&=0.
+\end{align*}
+
+The value of the above flow equals \(2\), matching the size of \(M\).
+
+% -------------------------------------------------
+% 3.  Residual network and an augmenting path
+% -------------------------------------------------
+Arcs that carry flow \(1\) acquire a backward arc of capacity \(1\), while unsaturated arcs keep their forward capacity.
+In this residual network an \(s\!-\!t\) path exists:
+\[
+s\to c\to e\to b\to d\to a\to f\to t,
+\]
+whose residual capacity is \(1\).
+
+% -------------------------------------------------
+% 4.  Augment and derive the larger matching
+% -------------------------------------------------
+Augment one unit along that path.  
+Non-zero left-to-right flows after augmentation are
+\[
+f(a,f)=1,\qquad
+f(b,d)=1,\qquad
+f(c,e)=1.
+\]
+
+Hence the new matching is
+\[
+M'=\{(a,f),\,(b,d),\,(c,e)\},
+\]
+with size \(3>2\), so the matching has been successfully improved.
 
 
     \newpage
