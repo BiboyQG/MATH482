@@ -185,7 +185,22 @@ with size \(3>2\), so the matching has been successfully improved.
 
     \textbf{Solution:} \\
 
+Primal linear program: feasible circulation
+\begin{align*}
+\text{maximize } & 0 \\[6pt]
+\text{s.t. } 
+& \sum_{e \in \delta^{+}(v)} f_e \;-\; \sum_{e \in \delta^{-}(v)} f_e \;=\; 0 && v \in V \\[4pt]
+& l_e \;\le\; f_e \;\le\; u_e && e \in E
+\end{align*}
 
+Dual linear program
+\begin{align*}
+\text{minimize } & \sum_{e \in E} \bigl(u_e \,\alpha_e \;-\; l_e \,\beta_e\bigr) \\[6pt]
+\text{s.t. } 
+& \pi_v \;-\; \pi_w \;+\; \alpha_e \;-\; \beta_e \;=\; 0 && e = (v,w) \in E \\[4pt]
+& \alpha_e \;\ge\; 0 && e \in E \\[2pt]
+& \beta_e \;\ge\; 0 && e \in E
+\end{align*}
 
     \newpage
 
