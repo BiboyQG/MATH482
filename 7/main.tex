@@ -202,6 +202,18 @@ Dual linear program
 & \beta_e \;\ge\; 0 && e \in E
 \end{align*}
 
+where
+\begin{itemize}
+\item $\delta^{+}(v)$ : set of edges leaving vertex $v$
+\item $\delta^{-}(v)$ : set of edges entering vertex $v$
+\item $f_e$ : flow on edge $e$
+\item $l_e,\,u_e$ : lower and upper capacity bounds on edge $e$
+\item $\pi_v$ : potential (dual variable) associated with vertex $v$ (free, i.e.\ unrestricted in sign)
+\item $\alpha_e,\,\beta_e$ : non-negative dual variables for edge $e$
+\item $V$ : set of vertices
+\item $E$ : set of directed edges
+\end{itemize}
+
     \newpage
 
     \item[4.] Let $(N, A)$ be an instance of the supply-and-demand version of max flow with capacities $c$ and demands $d$. Recall the max-flow reduction from lecture. Prove that there is a feasible flow if and only if the optimal solution in the max-flow reduction saturates all arcs leaving $s$ and entering $t$ (an arc is saturated if the flow along it is equal to its capacity).
