@@ -157,9 +157,6 @@ f(\text{all other arcs})&=0.
 
 The value of the above flow equals \(2\), matching the size of \(M\).
 
-% -------------------------------------------------
-% 3.  Residual network and an augmenting path
-% -------------------------------------------------
 Arcs that carry flow \(1\) acquire a backward arc of capacity \(1\), while unsaturated arcs keep their forward capacity.
 In this residual network an \(s\!-\!t\) path exists:
 \[
@@ -167,9 +164,6 @@ s\to c\to e\to b\to d\to a\to f\to t,
 \]
 whose residual capacity is \(1\).
 
-% -------------------------------------------------
-% 4.  Augment and derive the larger matching
-% -------------------------------------------------
 Augment one unit along that path.  
 Non-zero left-to-right flows after augmentation are
 \[
@@ -183,7 +177,6 @@ Hence the new matching is
 M'=\{(a,f),\,(b,d),\,(c,e)\},
 \]
 with size \(3>2\), so the matching has been successfully improved.
-
 
     \newpage
 
